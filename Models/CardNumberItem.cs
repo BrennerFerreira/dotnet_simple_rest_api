@@ -38,10 +38,13 @@ namespace CardNumber.Models
         {
             Email = email;
             CardNumber = generateCardNumber();
+            CreatedAt = DateTime.Now;
         }
 
-        public long Id { get; }
+        public long Id { get; set; }
         public string CardNumber { get; set; }
         public string Email { get; set; }
+
+        public DateTime CreatedAt { get; set; }
     }
 }

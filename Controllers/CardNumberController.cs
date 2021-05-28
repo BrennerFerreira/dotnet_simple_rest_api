@@ -30,7 +30,9 @@ namespace VaiVoaApi.Controllers
         {
             List<CardNumberItem> cardNumbers = await _context
                 .CardNumberItems
-                .Where(card => card.Email.Equals(Email)).ToListAsync();
+                .Where(card => card.Email.Equals(Email))
+                .OrderBy(card => card.CreatedAt)
+                .ToListAsync();
 
             if (cardNumbers == null)
             {
